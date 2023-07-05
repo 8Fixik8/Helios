@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 body {
-  font-family: "Open Sans", serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .wrapper {
@@ -104,14 +104,14 @@ body {
 
 .container {
   max-width: 1306px;
-  margin: 30px auto;
+  margin: 24px auto;
 }
 
 .examples {
-  margin-bottom: 215px;
+  margin-bottom: 222px;
 }
 .examples__title {
-  margin-bottom: 80px;
+  margin-bottom: 90px;
 }
 .examples__img {
   display: grid;
@@ -119,8 +119,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(303px, 1fr));
 }
 .examples__img_item {
-  background-color: #794f45;
-  padding: 0px 0px 85% 0px;
+  padding: 0px 0px 90% 0px;
   position: relative;
 }
 .examples__img_item img {
@@ -151,32 +150,33 @@ body {
 }
 
 .characteristics {
-  margin-bottom: 215px;
+  margin-bottom: 235px;
 }
 .characteristics__items {
-  max-width: 1152px;
+  max-width: 1145px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .characteristics__title {
-  margin-bottom: 80px;
+  margin-bottom: 95px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
 }
 .characteristics__card {
   display: flex;
   flex-direction: column;
-  width: 14.5%;
+  width: 19%;
 }
 .characteristics__icon {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   align-self: center;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2509803922));
 }
 .characteristics__name {
   font-size: 18px;
   font-weight: 600;
+  line-height: 30px;
   text-align: center;
   margin-bottom: 20px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
@@ -184,21 +184,23 @@ body {
 .characteristics__description {
   font-size: 16px;
   font-weight: 400;
+  line-height: 20px;
   text-align: center;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
 }
 
 .lens {
-  margin-bottom: 215px;
+  margin-bottom: 225px;
 }
 .lens__title {
-  margin-bottom: 60px;
+  margin-bottom: 90px;
 }
 .lens__block {
   display: grid;
-  gap: 40px;
+  column-gap: 40px;
+  row-gap: 65px;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  margin-bottom: 64px;
+  margin-bottom: 66px;
 }
 .lens__card {
   display: flex;
@@ -208,7 +210,7 @@ body {
 .lens__img {
   position: relative;
   padding: 0px 0px 90% 0px;
-  margin: 0px 0px 20px 0px;
+  margin: 0px 0px 45px 0px;
 }
 .lens__img img {
   width: 100%;
@@ -221,7 +223,7 @@ body {
 .lens__sale p {
   position: absolute;
   right: 0;
-  top: 0;
+  top: -4%;
   z-index: 1;
   display: inline-block;
   font-size: 16px;
@@ -230,12 +232,12 @@ body {
   border-radius: 50%;
   background-color: #FF4A4A;
   color: white;
-  padding: 3.5% 1%;
+  padding: 3.9% 1%;
 }
 .lens__name {
   font-size: 24px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 .lens__price {
   font-size: 24px;
@@ -250,7 +252,7 @@ body {
   display: inline-block;
   border: 1px solid black;
   border-radius: 7px;
-  padding: 8px 20px;
+  padding: 3% 6%;
 }
 .lens__btn {
   display: flex;
@@ -263,14 +265,14 @@ body {
   display: inline-block;
   border-radius: 5px;
   background-color: black;
-  padding: 1% 2.5%;
+  padding: 1.8% 3.7%;
 }
 
 .features {
   margin-bottom: 155px;
 }
 .features__title {
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 .features__block {
   margin: 0 auto;
@@ -280,49 +282,51 @@ body {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 40px;
+  line-height: 35px;
 }
 .features__text {
   font-size: 22px;
   font-weight: 400;
-  margin-bottom: 60px;
+  line-height: 33px;
+  margin-bottom: 65px;
+  letter-spacing: 0.02em;
+}
+.features__text-before-block {
+  margin-bottom: 215px;
 }
 .features__center-block {
   margin: 0 auto;
   max-width: 1086px;
   background-color: #EFF4FC;
-  padding: 3% 15%;
-  margin-bottom: 215px;
+  padding: 4.5% 10%;
+  margin-bottom: 230px;
 }
 .features__center-text {
   font-size: 22px;
   font-weight: 400;
+  line-height: 30px;
 }
 
 .footer {
   background-color: #000000;
   color: #ffffff;
-  padding: 2% 0;
+  padding: 7% 18%;
 }
 .footer__nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 60px;
+  margin-bottom: 5%;
   max-width: 1227px;
-}
-.footer__column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 .footer__title {
   font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .footer__option {
-  margin-bottom: 10px;
+  line-height: 38px;
 }
 .footer__media {
   display: flex;
