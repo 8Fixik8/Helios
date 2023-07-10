@@ -11,15 +11,16 @@ body {
 }
 
 .container {
-   max-width: 1306px;
+   max-width: 1320px;
    margin: 0 auto;
+   padding: 0 10px;
 
    @media (max-width: 769px) {
-      max-width: 720px;
+      max-width: 735px;
    }
 
    @media (max-width: 321px) {
-      max-width: 288px;
+      max-width: 310px;
    }
 }
 
@@ -43,6 +44,7 @@ body {
    }
 }
 
+//! block - 'Examples of photos taken on Helios'
 .examples {
 
    margin-bottom: 16.5%;
@@ -62,6 +64,8 @@ body {
       }
    }
 
+   // all images
+
    &__img {
       display: grid;
       gap: 23px;
@@ -79,6 +83,7 @@ body {
    
    }
 
+   // one image
    &__img-item {
       padding: 0px 0px 90% 0px;
       position: relative;
@@ -87,6 +92,7 @@ body {
          &:nth-of-type(1) {
             order: 1;
             grid-column: span 3;
+
             @media (max-width: 321px) {
                grid-column: span 2;
             }
@@ -98,6 +104,7 @@ body {
          &:nth-of-type(3) {
             order: 4;
             grid-column: span 3;
+
             @media (max-width: 321px) {
                grid-column: span 2;
             }
@@ -105,6 +112,7 @@ body {
          &:nth-of-type(4) {
             order: 5;
             grid-column: span 3;
+
             @media (max-width: 321px) {
                grid-column: span 2;
             }
@@ -120,6 +128,7 @@ body {
          &:nth-of-type(7) {
             order: 8;
             grid-column: span 3;
+
             @media (max-width: 321px) {
                grid-column: span 2;
             }
@@ -141,7 +150,9 @@ body {
 
    }
 
-   @media (min-width: 800px) {
+   @media (min-width: 1020px) {
+
+      // images 2 x 2
       &__img-big {
          grid-column: span 2;
          grid-row: span 2;
@@ -152,6 +163,7 @@ body {
          }
       }
 
+      // images 1 x 2
       &__img-long {
          grid-column: span 1;
          grid-row: span 2;
@@ -165,6 +177,7 @@ body {
 
 }
 
+//! block - 'Technical characteristics of Helios lens'
 .characteristics {
 
       margin-bottom: 16.5%;
@@ -177,19 +190,6 @@ body {
          margin-bottom: 12%;
       }
 
-      &__items {
-         max-width: 1145px;
-         margin: 0 auto;
-         display: flex;
-         flex-direction: row;
-         justify-content: space-between;
-
-         @media (max-width: 769px) {
-            flex-direction: column;
-            align-items: center;
-         }
-      }
-
 		&__title {
          margin-bottom: 6%;
          text-shadow: $shadow;
@@ -199,6 +199,21 @@ body {
          }
 		}
 
+      // all cards
+      &__block {
+         max-width: 1145px;
+         margin: 0 auto;
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+      
+         @media (max-width: 769px) {
+            flex-direction: column;
+            align-items: center;
+         }
+      }
+
+      // one card
 		&__card {
          display: flex;
          flex-direction: column;
@@ -239,13 +254,13 @@ body {
 		}
 }
 
+//! block - 'More opportunities for creativity' for tablet and phone
 .opportunities {
 
    background: url('/assets/phone_img_flower.png') no-repeat;
    display: none;
 
    @media (max-width: 769px) {
-      margin: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -253,8 +268,9 @@ body {
       margin-bottom: 11%;
 
       @media (max-width: 321px) {
-         background-size: 350px 320px;
-         margin-bottom: 27%;
+         background-size: 155%;
+         background-position: center;
+         margin-bottom: 20.5%;
       }
 
       &__title {
@@ -296,6 +312,7 @@ body {
 
 }
 
+//! block - 'Buy a helios lens'
 .lens {
 
    @media (max-width: 769px) {
@@ -308,186 +325,191 @@ body {
 
    margin-bottom: 16.5%;
 
-		&__title {
-         margin-bottom: 6.3%;
+	&__title {
+      margin-bottom: 6.3%;
 
-         @media (max-width: 769px) {
-            margin-bottom: 7.5%;
-         }
-
-         @media (max-width: 321px) {
-            margin-bottom: 27%;
-         }
-		}
-
-      &__search-box {
-         display: none; 
-
-         @media (max-width: 769px) {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin-bottom: 8%;
-
-            @media (max-width: 321px) {
-               margin-bottom: 24%;
-            }
-            &__filters {
-               display: flex;
-               flex-direction: row;
-            }
-         
-            &__search {
-            }
-         }
+      @media (max-width: 769px) {
+         margin-bottom: 7.5%;
       }
 
-		&__block {
-         display: grid;
-         column-gap: 40px;
-         row-gap: 65px;
-         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-         margin-bottom: 4.6%;
+      @media (max-width: 321px) {
+         margin-bottom: 27%;
+      }
+	}
 
-         @media (max-width: 769px) {
-            margin-bottom: 9.5%;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            column-gap: 20px;
-            row-gap: 40px;
-         }
+   // for tablet and phone
+   &__search-box {
+      display: none; 
 
-         @media (max-width: 321px) {
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            row-gap: 25px;
-            margin-bottom: 17%;
-         }
-		}
-
-		&__card {
+      @media (max-width: 769px) {
          display: flex;
-         flex-direction: column;
-         position: relative;
-
-         @media (max-width: 769px) {
-            &:nth-of-type(5) {
-               display: none;
-            }
-
-            &:nth-of-type(6) {
-               display: none;
-            }
-         }
-		}
-
-		&__img {
-         position: relative;
-         padding: 0px 0px 90% 0px;
-         margin: 0px 0px 45px 0px;
+         flex-direction: row;
+         justify-content: space-between;
+         margin-bottom: 8%;
 
          @media (max-width: 321px) {
-            margin-bottom: 17px;
+            margin-bottom: 24%;
+         }
+         &__filters {
+            display: flex;
+            flex-direction: row;
+         }
+         
+         &__search {
+         }
+      }
+   }
+
+   //all cards
+	&__block {
+      display: grid;
+      column-gap: 40px;
+      row-gap: 65px;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      margin-bottom: 4.6%;
+
+      @media (max-width: 769px) {
+         margin-bottom: 9.5%;
+         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+         column-gap: 20px;
+         row-gap: 40px;
+      }
+
+      @media (max-width: 321px) {
+         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+         row-gap: 25px;
+         margin-bottom: 17%;
+      }
+	}
+
+   // one card
+	&__card {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      @media (max-width: 769px) {
+         &:nth-of-type(5) {
+            display: none;
          }
 
-         img {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            object-fit: cover;
+         &:nth-of-type(6) {
+            display: none;
          }
-		}
+      }
+	}
 
-		&__sale {
-         p{
-            position: absolute;
-            right: 0;
-            top: -4%;
-            z-index: 1;
-            display: inline-block;
-            font-size: 16px;
-            font-weight: 400;
-            text-transform: uppercase;
-            border-radius: 50%;
-            background-color: #FF4A4A;
-            color: white;
-            padding: 3.9% 1%;
+	&__img {
+      position: relative;
+      padding: 0px 0px 90% 0px;
+      margin: 0px 0px 45px 0px;
 
-            @media (max-width: 769px) {
-               padding: 4.7% 1.2%;
-            }
+      @media (max-width: 321px) {
+         margin-bottom: 17px;
+      }
 
-            @media (max-width: 321px) {
-               font-size: 10px;
-               padding: 7% 0.5%;
+      img {
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         top: 0;
+         left: 0;
+         object-fit: cover;
+      }
+	}
 
-            }
-         }
-		}
-
-		&__name {
-         font-size: 24px;
-         font-weight: 600;
-         margin-bottom: 35px;
-
-         @media (max-width: 321px) {
-            font-size: 18px;
-            line-height: 28px;
-            margin-bottom: 23px;
-         }
-		}
-
-		&__price {
-         font-size: 24px;
+	&__sale {
+      p{
+         position: absolute;
+         right: 0;
+         top: -4%;
+         z-index: 1;
+         display: inline-block;
+         font-size: 16px;
          font-weight: 400;
-         margin-bottom: 30px;
+         text-transform: uppercase;
+         border-radius: 50%;
+         background-color: #FF4A4A;
+         color: white;
+         padding: 3.9% 1%;
+
+         @media (max-width: 769px) {
+            padding: 4.7% 1.2%;
+         }
 
          @media (max-width: 321px) {
-            font-size: 18px;
-            margin-bottom: 16px;
-         }
-		}
+            font-size: 10px;
+            padding: 7% 0.5%;
 
-		&__more {
+         }
+      }
+	}
+
+	&__name {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 35px;
+
+      @media (max-width: 321px) {
          font-size: 18px;
-         font-weight: 700;
+         line-height: 28px;
+         margin-bottom: 23px;
+      }
+	}
 
-         p {
-            display: inline-block;
-            border: 1px solid black;
-            border-radius: 7px;
-            padding: 3% 6%;
+	&__price {
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 30px;
 
-            @media (max-width: 321px) {
-               font-size: 12px;
-               padding: 12% 6%;
-            }
-         }
-		}
-
-		&__btn {
-         display: flex;
-         justify-content: center;
+      @media (max-width: 321px) {
          font-size: 18px;
-         font-weight: 700;
-         color: white;
-         p{
-            display: inline-block;
-            border-radius: 5px;
-            background-color: black;
-            padding: 1.8% 3.7%;
+         margin-bottom: 16px;
+      }
+	}
 
-            @media (max-width: 769px) {
-               padding: 2.8% 6.7%;
-            }
+	&__more {
+      font-size: 18px;
+      font-weight: 700;
 
-            @media (max-width: 321px) {
-               font-size: 12px;
-               padding: 8.8% 5.7%;
-            }
+      p {
+         display: inline-block;
+         border: 1px solid black;
+         border-radius: 7px;
+         padding: 3% 6%;
+
+         @media (max-width: 321px) {
+            font-size: 12px;
+            padding: 12% 6%;
          }
-		}
+      }
+	}
+
+	&__btn {
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      p{
+         display: inline-block;
+         border-radius: 5px;
+         background-color: black;
+         padding: 1.8% 3.7%;
+
+         @media (max-width: 769px) {
+            padding: 2.8% 6.7%;
+         }
+
+         @media (max-width: 321px) {
+            font-size: 12px;
+            padding: 8.8% 5.7%;
+         }
+      }
+	}
 }
+
+//! block - 'History and features of Helios Lens'
 .features {
 
    margin-bottom: 16.3%;
@@ -500,105 +522,110 @@ body {
       margin-bottom: 23%;
    }
 
-		&__title {
-         margin-bottom: 5%;
+	&__title {
+      margin-bottom: 5%;
          
-         @media (max-width: 769px) {
-            margin-bottom: 7%;
-         }
-
-         @media (max-width: 321px) {
-            margin-bottom: 15%;
-         }
-		}
-
-		&__block {
-         margin: 0 auto;
-         max-width: 864px;
-		}
-
-		&__name {
-         font-size: 28px;
-         font-weight: 600;
-         margin-bottom: 4.5%;
-         line-height: 39px;
-
-         @media (max-width: 769px) {
-            max-width: 617px;
-         }
-
-         @media (max-width: 321px) {
-            font-size: 18px;
-            line-height: 30px;
-            margin-bottom: 5.5%;
-         }
-		}
-
-		&__text {
-         font-size: 22px;
-         font-weight: 400;
-         line-height: 33px;
-         margin-bottom: 7.5%;
-         letter-spacing: 0.02em;
-
-         @media (max-width: 769px) {
-            font-size: 18px;
-            line-height: 27px;
-         }
-
-         @media (max-width: 321px) {
-            font-size: 14px;
-            line-height: 21px;
-            margin-bottom: 14%;
-         }
-		}
-
-      &__text-before-block {
-         margin-bottom: 25%;
-
-         @media (max-width: 769px) {
-            margin-bottom: 11.5%;
-         }
-
-         @media (max-width: 321px) {
-            margin-bottom: 24%;
-         }
+      @media (max-width: 769px) {
+         margin-bottom: 7%;
       }
 
-		&__center-block {
-         margin: 0 auto;
-         max-width: 1086px;
-         background-color: #EFF4FC;
-         padding: 4.5% 10%;
-         margin-bottom: 17%;
+      @media (max-width: 321px) {
+         margin-bottom: 15%;
+      }
+	}
 
-         @media (max-width: 769px) {
-            padding: 10.5% 0%;
-            margin-bottom: 13.5%;
-         }
+	&__block {
+      margin: 0 auto;
+      max-width: 864px;
+	}
 
-         @media (max-width: 321px) {
-            padding: 10.5% 3%;
-            margin-bottom: 24%;
-         }
-		}
+	&__name {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 4.5%;
+      line-height: 39px;
 
-		&__center-text {
-         font-size: 22px;
-         font-weight: 400;
+      @media (max-width: 769px) {
+         max-width: 617px;
+      }
+
+      @media (max-width: 321px) {
+         font-size: 18px;
          line-height: 30px;
+         margin-bottom: 5.5%;
+      }
+	}
 
-         @media (max-width: 769px){
-            font-size: 18px;
-         }
+   &__text {
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 33px;
+      margin-bottom: 7.5%;
+      letter-spacing: 0.02em;
 
-         @media (max-width: 321px) {
-            font-size: 14px;
-            line-height: 21px;
-         }
-		}
+      @media (max-width: 769px) {
+         font-size: 18px;
+         line-height: 27px;
+      }
+
+      @media (max-width: 321px) {
+         font-size: 14px;
+         line-height: 21px;
+         margin-bottom: 14%;
+      }
+   }
+
+   &__text-before-block {
+      margin-bottom: 25%;
+
+      @media (max-width: 769px) {
+         margin-bottom: -1.3%;
+      }
+
+      @media (max-width: 321px) {
+         margin-bottom: 24%;
+      }
+   }
+
 }
 
+.center-block {
+   margin: 0 auto;
+   max-width: 1086px;
+   background-color: #EFF4FC;
+   padding: 2% 5.6% 2% 4%;
+   margin-bottom: 8%;
+
+   @media (max-width: 769px) {
+      padding: 10.5% 3.5%;
+      margin-bottom: 11%;
+   }
+
+   @media (max-width: 321px) {
+      padding: 9.5% 6%;
+      margin-bottom: 20.5%;
+   }
+
+   &__text {
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 33px;
+      letter-spacing: 0.02em;
+   
+      @media (max-width: 769px){
+         font-size: 18px;
+         line-height: 28px;
+      }
+   
+      @media (max-width: 321px) {
+         font-size: 14px;
+         line-height: 21px;
+      }
+   }
+}
+
+
+//! footer
 .footer {
 
    background-color: #000000;
