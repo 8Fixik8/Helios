@@ -8,23 +8,23 @@ body {
 
 .wrapper {
    min-height: 100%;
+   width: 100%;
 }
 
 .container {
-   max-width: 1320px;
+   max-width: 1328px;
    margin: 0 auto;
    padding: 0 10px;
+   width: 100%;
 
-   @media (max-width: 769px) {
-      max-width: 735px;
+   @media (max-width: 1240px) {
+      max-width: 100%;
+      padding: 0 22px;
    }
 
-   @media (max-width: 321px) {
-      max-width: 310px;
+   @media (max-width: 767px) {
+      padding: 0 15px;
    }
-}
-
-.main {
 }
 
 .title {
@@ -34,11 +34,11 @@ body {
    line-height: 60px;
    text-align: center;
 
-   @media (max-width: 769px) {
+   @media (max-width: 1240px) {
       max-width: 566px;
    }
 
-   @media (max-width: 321px) {
+   @media (max-width: 767px) {
       font-size: 24px;
       line-height: 32px;
    }
@@ -47,155 +47,132 @@ body {
 //! block - 'Examples of photos taken on Helios'
 .examples {
 
-   margin-bottom: 16.5%;
+   margin-bottom: 215px;
 
-   @media (max-width: 769px) {
-      margin-bottom: 12%;
+   @media (max-width: 1240px) {
+      margin-bottom: 82px;
    }
 
-   @media (max-width: 321px) {
-      margin-bottom: 25%;
+   @media (max-width: 767px) {
+      margin-bottom: 70px;
    }
 
    &__title {
-      margin-bottom: 6%;
-      @media (max-width: 321px) {
-         margin-bottom: 14%;
+      margin-bottom: 75px;
+
+      @media (max-width: 1240px) {
+         margin-bottom: 50px;
+      }
+
+      @media (max-width: 767px) {
+         line-height: 35px;
+         margin-bottom: 40px;
       }
    }
 
    // all images
 
-   &__img {
-      display: grid;
-      gap: 23px;
-      grid-template-columns: repeat(auto-fit, minmax(303px, 1fr));
+	&__img {
+		display: grid;
+		gap: 24px;
+		grid-template-areas:
+			'img1 img1 img2 img3'
+			'img1 img1 img2 img4'
+			'img5 img6 img7 img7'
+			'img8 img6 img7 img7';
 
-      @media (max-width: 769px) {
-         gap: 20px;
-         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      }
+		@media (max-width: 1240px) {
+         gap: 16px;
+			grid-template-areas:
+				'img1 img1 img1 img2 img2'
+				'img5 img5 img3 img3 img3'
+				'img4 img4 img4 img6 img6'
+				'img8 img8 img7 img7 img7';
+		}
 
-      @media (max-width: 321px) {
-         gap: 8px;
-         grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-      }
-   
-   }
+		@media (max-width: 767px) {
+         gap: 10px;
+			grid-template-areas:
+				'img1 img2'
+				'img3 img4'
+				'img5 img6'
+				'img8 img7';
 
-   // one image
-   &__img-item {
+			& > img {
+				aspect-ratio: 69/64;
+			}
+		}
+	}
+
+	// one image
+	&__img-item {
       padding: 0px 0px 90% 0px;
       position: relative;
 
-      @media (max-width: 769px) {
-         &:nth-of-type(1) {
-            order: 1;
-            grid-column: span 3;
+		&:nth-of-type(1) {
+			grid-area: img1;
+		}
 
-            @media (max-width: 321px) {
-               grid-column: span 2;
-            }
-         }
-         &:nth-of-type(2) {
-            order: 2;
-            grid-column: span 2;
-         }
-         &:nth-of-type(3) {
-            order: 4;
-            grid-column: span 3;
+		&:nth-of-type(2) {
+			grid-area: img2;
+		}
 
-            @media (max-width: 321px) {
-               grid-column: span 2;
-            }
-         }
-         &:nth-of-type(4) {
-            order: 5;
-            grid-column: span 3;
+		&:nth-of-type(3) {
+			grid-area: img3;
+		}
 
-            @media (max-width: 321px) {
-               grid-column: span 2;
-            }
-         }
-         &:nth-of-type(5) {
-            order: 3;
-            grid-column: span 2;
-         }
-         &:nth-of-type(6) {
-            order: 6;
-            grid-column: span 2;
-         }
-         &:nth-of-type(7) {
-            order: 8;
-            grid-column: span 3;
+		&:nth-of-type(4) {
+			grid-area: img4;
+		}
 
-            @media (max-width: 321px) {
-               grid-column: span 2;
-            }
-         }
-         &:nth-of-type(8) {
-            order: 7;
-            grid-column: span 2;
-         }
-      }
+		&:nth-of-type(5) {
+			grid-area: img5;
+		}
+
+		&:nth-of-type(6) {
+			grid-area: img6;
+		}
+
+		&:nth-of-type(7) {
+			grid-area: img7;
+		}
+
+		&:nth-of-type(8) {
+			grid-area: img8;
+		}
 
       img {
          width: 100%;
          height: 100%;
          object-fit: cover;
          position: absolute;
-         top: 0;
-         left: 0;
       }
-
-   }
-
-   @media (min-width: 1020px) {
-
-      // images 2 x 2
-      &__img-big {
-         grid-column: span 2;
-         grid-row: span 2;
-
-         @media (max-width: 321px) {
-            grid-column: span 1;
-            grid-row: span 1;
-         }
-      }
-
-      // images 1 x 2
-      &__img-long {
-         grid-column: span 1;
-         grid-row: span 2;
-
-         @media (max-width: 321px) {
-            grid-column: span 1;
-            grid-row: span 1;
-         }
-      }
-   }
-
+	}
 }
 
 //! block - 'Technical characteristics of Helios lens'
 .characteristics {
 
-      margin-bottom: 16.5%;
+      margin-bottom: 220px;
 
-      @media (max-width: 769px) {
-         margin-bottom: 7.3%;
+      @media (max-width: 1240px) {
+         margin-bottom: 42px;
       }
 
-      @media (max-width: 321px) {
-         margin-bottom: 12%;
+      @media (max-width: 767px) {
+         margin-bottom: 0;
       }
 
 		&__title {
-         margin-bottom: 6%;
+         margin-bottom: 80px;
          text-shadow: $shadow;
 
-         @media (max-width: 321px) {
-            margin-bottom: 14%;
+         @media (max-width: 1240px) {
+            margin-bottom: 50px;
+         }
+
+         @media (max-width: 767px) {
+            margin-bottom: 45px;
          }
 		}
 
@@ -207,7 +184,7 @@ body {
          flex-direction: row;
          justify-content: space-between;
       
-         @media (max-width: 769px) {
+         @media (max-width: 1240px) {
             flex-direction: column;
             align-items: center;
          }
@@ -219,19 +196,18 @@ body {
          flex-direction: column;
          width: 18%;
 
-         @media (max-width: 769px) {
-            width: 29%;
-            margin-bottom: 5.5%;
+         @media (max-width: 1240px) {
+            width: 28.5%;
+            margin-bottom: 45px;
          }
 
-         @media (max-width: 321px) {
+         @media (max-width: 767px) {
             width: 71%;
-            margin-bottom: 14%;
          }
 		}
 
 		&__icon {
-         margin-bottom: 14%;
+         margin-bottom: 25px;
          align-self: center;
          filter: drop-shadow($shadow);
 		}
@@ -259,26 +235,27 @@ body {
 
    background: url('/assets/phone_img_flower.png') no-repeat;
    display: none;
+   background-size: cover;
 
-   @media (max-width: 769px) {
+   @media (max-width: 1240px) {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 6.5% 0;
-      margin-bottom: 11%;
+      padding: 50px 0;
+      margin-bottom: 85px;
 
-      @media (max-width: 321px) {
+      @media (max-width: 767px) {
          background-size: 155%;
          background-position: center;
-         margin-bottom: 20.5%;
+         margin-bottom: 35px;
       }
 
       &__title {
          color: #ffffff;
-         margin-bottom: 7%;
+         margin-bottom: 50px;
 
-         @media (max-width: 321px) {
-            margin-bottom: 11%;
+         @media (max-width: 767px) {
+            margin-bottom: 35px;
          }
       }
    
@@ -289,20 +266,20 @@ body {
          font-weight: 400;
          line-height: 33px;
          color: #ffffff;
-         margin-bottom: 6.6%;
+         margin-bottom: 50px;
 
-         @media (max-width: 321px) {
+         @media (max-width: 767px) {
             font-size: 14px;
             line-height: 22px;
             max-width: 286px;
-            margin-bottom: 12.5%;
+            margin-bottom: 35px;
          }
       }
    
       &__arrow {
-         margin-bottom: 3%;
+         margin-bottom: 10px;
 
-         @media (max-width: 321px) {
+         @media (max-width: 767px) {
             img {
                width: 24px;
             }
@@ -315,25 +292,25 @@ body {
 //! block - 'Buy a helios lens'
 .lens {
 
-   @media (max-width: 769px) {
-      margin-bottom: 12.5%;
+   @media (max-width: 1240px) {
+      margin-bottom: 90px;
    }
 
-   @media (max-width: 321px) {
-      margin-bottom: 24.5%;
+   @media (max-width: 767px) {
+      margin-bottom: 70px;
    }
 
-   margin-bottom: 16.5%;
+   margin-bottom: 210px;
 
 	&__title {
-      margin-bottom: 6.3%;
+      margin-bottom: 60px;
 
-      @media (max-width: 769px) {
-         margin-bottom: 7.5%;
+      @media (max-width: 1240px) {
+         margin-bottom: 50px;
       }
 
-      @media (max-width: 321px) {
-         margin-bottom: 27%;
+      @media (max-width: 767px) {
+         margin-bottom: 80px;
       }
 	}
 
@@ -341,22 +318,19 @@ body {
    &__search-box {
       display: none; 
 
-      @media (max-width: 769px) {
+      @media (max-width: 1240px) {
          display: flex;
          flex-direction: row;
          justify-content: space-between;
-         margin-bottom: 8%;
+         margin-bottom: 40px;
 
-         @media (max-width: 321px) {
-            margin-bottom: 24%;
+         @media (max-width: 767px) {
+            margin-bottom: 70px;
          }
          &__filters {
             display: flex;
             flex-direction: row;
 
-         }
-         
-         &__search {
          }
       }
    }
@@ -365,21 +339,20 @@ body {
 	&__block {
       display: grid;
       column-gap: 40px;
-      row-gap: 65px;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      margin-bottom: 4.6%;
+      row-gap: 45px;
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 62px;
 
-      @media (max-width: 769px) {
-         margin-bottom: 9.5%;
-         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      @media (max-width: 1240px) {
+         margin-bottom: 65px;
+         grid-template-columns: repeat(2, 1fr);
          column-gap: 20px;
-         row-gap: 40px;
+         row-gap: 30px;
       }
 
-      @media (max-width: 321px) {
-         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      @media (max-width: 767px) {
          row-gap: 25px;
-         margin-bottom: 17%;
+         margin-bottom: 50px;
       }
 	}
 
@@ -389,7 +362,7 @@ body {
       flex-direction: column;
       position: relative;
 
-      @media (max-width: 769px) {
+      @media (max-width: 1240px) {
          &:nth-of-type(5) {
             display: none;
          }
@@ -402,19 +375,17 @@ body {
 
 	&__img {
       position: relative;
-      padding: 0px 0px 90% 0px;
-      margin: 0px 0px 45px 0px;
+      padding: 0px 0px 100% 0px;
+      margin: 0px 0px 25px 0px;
 
-      @media (max-width: 321px) {
-         margin-bottom: 17px;
+      @media (max-width: 767px) {
+         margin-bottom: 5px;
       }
 
       img {
          width: 100%;
          height: 100%;
          position: absolute;
-         top: 0;
-         left: 0;
          object-fit: cover;
       }
 	}
@@ -423,7 +394,6 @@ body {
       p{
          position: absolute;
          right: 0;
-         top: -4%;
          z-index: 1;
          display: inline-block;
          font-size: 16px;
@@ -432,15 +402,15 @@ body {
          border-radius: 50%;
          background-color: #FF4A4A;
          color: white;
-         padding: 3.9% 1%;
+         padding: 18px 4.6px;
 
-         @media (max-width: 769px) {
-            padding: 4.7% 1.2%;
+         @media (max-width: 1240px) {
+            padding: 2.3vw 0.5vw;
          }
 
-         @media (max-width: 321px) {
+         @media (max-width: 767px) {
             font-size: 10px;
-            padding: 7% 0.5%;
+            padding: 2.5vw 0.5vw;
 
          }
       }
@@ -451,7 +421,7 @@ body {
       font-weight: 600;
       margin-bottom: 35px;
 
-      @media (max-width: 321px) {
+      @media (max-width: 767px) {
          font-size: 18px;
          line-height: 28px;
          margin-bottom: 23px;
@@ -463,7 +433,7 @@ body {
       font-weight: 400;
       margin-bottom: 30px;
 
-      @media (max-width: 321px) {
+      @media (max-width: 767px) {
          font-size: 18px;
          margin-bottom: 16px;
       }
@@ -479,11 +449,11 @@ body {
          display: inline-block;
          border: 1px solid black;
          border-radius: 7px;
-         padding: 3% 6%;
+         padding: 10px 25px;
 
-         @media (max-width: 321px) {
+         @media (max-width: 767px) {
             font-size: 12px;
-            padding: 12% 6%;
+            padding: 15px 7.5px;
          }
       }
 
@@ -502,15 +472,15 @@ body {
          display: inline-block;
          border-radius: 5px;
          background-color: black;
-         padding: 1.8% 3.7%;
+         padding: 22px 50px;
 
-         @media (max-width: 769px) {
-            padding: 2.8% 6.7%;
+         @media (max-width: 1240px) {
+            padding:20px 50px;
          }
 
-         @media (max-width: 321px) {
+         @media (max-width: 767px) {
             font-size: 12px;
-            padding: 8.8% 5.7%;
+            padding: 25px 17px;
          }
       }
 	}
@@ -519,47 +489,51 @@ body {
 //! block - 'History and features of Helios Lens'
 .features {
 
-   margin-bottom: 16.3%;
+   margin-bottom: 215px;
 
-   @media (max-width: 769px) {
-      margin-bottom: 12%;
+   @media (max-width: 1240px) {
+      margin-bottom: 80px;
    }
 
-   @media (max-width: 321px) {
-      margin-bottom: 23%;
+   @media (max-width: 767px) {
+      margin-bottom: 65px;
    }
 
 	&__title {
-      margin-bottom: 5%;
+      margin-bottom: 65px;
          
-      @media (max-width: 769px) {
-         margin-bottom: 7%;
+      @media (max-width: 1240px) {
+         margin-bottom: 50px;
       }
 
-      @media (max-width: 321px) {
-         margin-bottom: 15%;
+      @media (max-width: 767px) {
+         margin-bottom: 40px;
       }
 	}
 
 	&__block {
       margin: 0 auto;
       max-width: 864px;
+
+      @media (max-width: 1240px) {
+         max-width: 710px;
+      }
 	}
 
 	&__name {
       font-size: 28px;
       font-weight: 600;
-      margin-bottom: 4.5%;
-      line-height: 39px;
+      margin-bottom: 40px;
+      line-height: 37px;
 
-      @media (max-width: 769px) {
+      @media (max-width: 1240px) {
          max-width: 617px;
       }
 
-      @media (max-width: 321px) {
+      @media (max-width: 767px) {
          font-size: 18px;
          line-height: 30px;
-         margin-bottom: 5.5%;
+         margin-bottom: 17px;
       }
 	}
 
@@ -567,30 +541,28 @@ body {
       font-size: 22px;
       font-weight: 400;
       line-height: 33px;
-      margin-bottom: 7.5%;
-      letter-spacing: 0.02em;
+      margin-bottom: 65px;
+      letter-spacing: 0.4px;
 
-      @media (max-width: 769px) {
+      @media (max-width: 1240px) {
          font-size: 18px;
          line-height: 27px;
+         margin-bottom: 45px;
       }
 
-      @media (max-width: 321px) {
+      @media (max-width: 767px) {
          font-size: 14px;
          line-height: 21px;
-         margin-bottom: 14%;
+         letter-spacing: 0.45px;
+         margin-bottom: 40px;
       }
    }
 
    &__text-before-block {
-      margin-bottom: 25%;
+      margin-bottom: 210px;
 
-      @media (max-width: 769px) {
-         margin-bottom: -1.3%;
-      }
-
-      @media (max-width: 321px) {
-         margin-bottom: 24%;
+      @media (max-width: 1240px) {
+         margin-bottom: 10px;
       }
    }
 
@@ -600,17 +572,17 @@ body {
    margin: 0 auto;
    max-width: 1086px;
    background-color: #EFF4FC;
-   padding: 2% 5.6% 2% 4%;
-   margin-bottom: 8%;
+   padding: 55px 110px 55px 110px;
+   margin-bottom: 220px;
 
-   @media (max-width: 769px) {
-      padding: 10.5% 3.5%;
-      margin-bottom: 11%;
+   @media (max-width: 1240px) {
+      padding: 70px 29px;
+      margin-bottom: 104px;
    }
 
-   @media (max-width: 321px) {
-      padding: 9.5% 6%;
-      margin-bottom: 20.5%;
+   @media (max-width: 767px) {
+      padding: 35px 20px;
+      margin-bottom: 60px;
    }
 
    &__text {
@@ -619,12 +591,12 @@ body {
       line-height: 33px;
       letter-spacing: 0.02em;
    
-      @media (max-width: 769px){
+      @media (max-width: 1240px){
          font-size: 18px;
          line-height: 28px;
       }
    
-      @media (max-width: 321px) {
+      @media (max-width: 767px) {
          font-size: 14px;
          line-height: 21px;
       }
@@ -636,36 +608,36 @@ body {
 .footer {
 
    background-color: #000000;
-   padding: 6% 18%;
+   padding: 155px 0;
 
-   @media (max-width: 769px) {
-      padding: 14% 15% 14% 3%;
+   @media (max-width: 1240px) {
+      padding: 110px 90px 110px 5px;
    }
 
-   @media (max-width: 321px) {
-      padding: 27% 0;
+   @media (max-width: 767px) {
+      padding: 85px 0;
    }
 
    &__nav {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      margin-bottom: 5%;
+      margin-bottom: 60px;
       max-width: 1227px;
 
-      @media (max-width: 769px) {
-         margin-bottom: 8.5%;
+      @media (max-width: 1240px) {
+         margin-bottom: 60px;
       }
 
-      @media (max-width: 321px) {
+      @media (max-width: 767px) {
          flex-direction: column;
+         margin-bottom: -20px;
       }
    }
 
    &__column {
-      @media (max-width: 321px) {
-         margin-bottom: 15%;
-         margin-bottom: 10%;
+      @media (max-width: 767px) {
+         margin-bottom: 45px;
       }
    }
 
