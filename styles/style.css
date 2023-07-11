@@ -566,18 +566,23 @@ body {
 .lens__more {
   font-size: 18px;
   font-weight: 700;
+  text-decoration: none;
+  color: #000000;
 }
-.lens__more p {
+.lens__more span {
   display: inline-block;
   border: 1px solid black;
   border-radius: 7px;
   padding: 3% 6%;
 }
 @media (max-width: 321px) {
-  .lens__more p {
+  .lens__more span {
     font-size: 12px;
     padding: 12% 6%;
   }
+}
+.lens__more span:hover {
+  background-color: #fff1d6;
 }
 .lens__btn {
   display: flex;
@@ -586,19 +591,19 @@ body {
   font-weight: 700;
   color: white;
 }
-.lens__btn p {
+.lens__btn span {
   display: inline-block;
   border-radius: 5px;
   background-color: black;
   padding: 1.8% 3.7%;
 }
 @media (max-width: 769px) {
-  .lens__btn p {
+  .lens__btn span {
     padding: 2.8% 6.7%;
   }
 }
 @media (max-width: 321px) {
-  .lens__btn p {
+  .lens__btn span {
     font-size: 12px;
     padding: 8.8% 5.7%;
   }
@@ -726,7 +731,6 @@ body {
 
 .footer {
   background-color: #000000;
-  color: #ffffff;
   padding: 6% 18%;
 }
 @media (max-width: 769px) {
@@ -767,9 +771,12 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 20px;
+  color: #ffffff;
 }
 .footer__option {
   line-height: 38px;
+  color: #ffffff;
+  display: block;
 }
 .footer__media {
   display: flex;

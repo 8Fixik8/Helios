@@ -353,6 +353,7 @@ body {
          &__filters {
             display: flex;
             flex-direction: row;
+
          }
          
          &__search {
@@ -471,8 +472,10 @@ body {
 	&__more {
       font-size: 18px;
       font-weight: 700;
+      text-decoration: none;
+      color: #000000;
 
-      p {
+      span {
          display: inline-block;
          border: 1px solid black;
          border-radius: 7px;
@@ -483,6 +486,10 @@ body {
             padding: 12% 6%;
          }
       }
+
+      span:hover {
+         background-color: #fff1d6;
+      }
 	}
 
 	&__btn {
@@ -491,7 +498,7 @@ body {
       font-size: 18px;
       font-weight: 700;
       color: white;
-      p{
+      span{
          display: inline-block;
          border-radius: 5px;
          background-color: black;
@@ -629,7 +636,6 @@ body {
 .footer {
 
    background-color: #000000;
-   color: #ffffff;
    padding: 6% 18%;
 
    @media (max-width: 769px) {
@@ -668,10 +674,13 @@ body {
       font-weight: 700;
       text-transform: uppercase;
       margin-bottom: 20px;
+      color: #ffffff;
    }
 
    &__option {
       line-height: 38px;
+      color: #ffffff;
+      display: block;
    }
 
    &__media {
